@@ -1,26 +1,5 @@
 # Build a Full-Stack Inventory Management System with Next.js & Stack Auth
 
-<div align="center">
-<br />
-<a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank">
-<img width="1280" height="720" alt="Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of 10,000 REACT COMPONENTS (5)" src="https://github.com/user-attachments/assets/f208a5dc-a6b4-4a90-a3ef-93b9dbc23367" />
-</a>
-<br />
-<div>
-<img src="https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
-<img src="https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
-<img src="https://img.shields.io/badge/-TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" />
-<img src="https://img.shields.io/badge/-Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma" />
-<img src="https://img.shields.io/badge/-PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-<img src="https://img.shields.io/badge/-Stack Auth-FF6B6B?style=for-the-badge&logo=stackauth&logoColor=white" alt="Stack Auth" />
-<img src="https://img.shields.io/badge/-Lucide Icons-FD4D4D?style=for-the-badge&logo=lucide" alt="Lucide Icons" />
-</div>
-<h3 align="center">Create a Complete Inventory Management System with Authentication, Dashboard Analytics, and CRUD Operations</h3>
-<div align="center">
-Follow the full video tutorial on <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank"><b>YouTube</b></a>
-</div>
-<br />
-</div>
 
 ## 📋 Table of Contents
 
@@ -39,10 +18,6 @@ Follow the full video tutorial on <a href="https://youtu.be/YOUR_VIDEO_ID" targe
 In this comprehensive tutorial, you'll learn how to build a complete **inventory management system** using **Next.js 15**, **Stack Auth**, **Prisma**, and **PostgreSQL**. From user authentication to dashboard analytics, product management, and real-time inventory tracking—this video walks you through every step of building a production-ready full-stack application.
 
 Perfect for developers looking to master modern web development, learn full-stack architecture, or build their own business management tools.
-
-🎥 **Watch the full tutorial**: [YouTube](https://youtu.be/YOUR_VIDEO_ID)
-
----
 
 ## ⚙️ Tech Stack
 
@@ -74,7 +49,6 @@ Perfect for developers looking to master modern web development, learn full-stac
 - 🚀 **Server Actions** - Form handling with Next.js Server Actions
 - 🔄 **Real-time Updates** - Instant UI updates after data changes
 
----
 
 ## 👌 Quick Start
 
@@ -94,7 +68,7 @@ npm install
 
 ### Environment Setup
 
-1. Create a `.env.local` file in the root directory:
+1. Create a `.env` file in the root directory:
 
 ```env
 DATABASE_URL="postgresql://username:password@localhost:5432/inventory_db"

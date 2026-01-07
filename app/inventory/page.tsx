@@ -1,5 +1,7 @@
 import Pagination from "@/components/pagination";
 import Sidebar from "@/components/sidebar";
+import { updateProduct } from "@/lib/actions/update";
+
 import { deleteProduct } from "@/lib/actions/products";
 import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
@@ -67,7 +69,7 @@ export default async function InventoryPage({
           </div>
 
           {/* Products Table */}
-          <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+          <div className="bg-white rounded-lg border border-gray-200">
             <table className="w-full">
               <thead className="bg-gray-50">
                 <tr>
@@ -107,22 +109,79 @@ export default async function InventoryPage({
                     <td className="px-6 py-4  text-sm text-gray-900">
                       {product.quantity}
                     </td>
-                    <td className="px-6 py-4  text-sm text-gray-500">
-                      {product.lowStockAt || "-"}
-                    </td>
-                    <td className="px-6 py-4  text-sm text-gray-500">
-                      <form
-                        action={async (formData: FormData) => {
-                          "use server";
-                          await deleteProduct(formData);
-                        }}
-                      >
-                        <input type="hidden" name="id" value={product.id} />
-                        <button className="text-red-600 hover:text-red-900">
-                          Delete
-                        </button>
-                      </form>
-                    </td>
+  <td className="px-6 py-4  text-sm text-gray-500">
+    {product.lowStockAt || "-"}
+  </td>
+  <td className="px-6 py-4 text-sm text-gray-500">
+    <div className="flex items-center gap-3">
+      {/* EDIT */}
+      <details>
+        <summary className="cursor-pointer text-blue-600 hover:text-blue-900 list-none">
+          Edit
+        </summary>
+
+        <div className="absolute z-20  right-0 mt-5">
+          <form
+            action={updateProduct}
+            className="p-4 border rounded-lg bg-white space-y-2 w-80 shadow-lg"
+          >
+            <input type="hidden" name="id" value={product.id} />
+
+            <input
+              name="name"
+              defaultValue={product.name}
+              className="w-full px-3 py-2 border rounded"
+            />
+
+            <input
+              name="sku"
+              defaultValue={product.sku ?? ""}
+              className="w-full px-3 py-2 border rounded"
+            />
+
+            <input
+              name="price"
+              type="number"
+              step="0.01"
+              defaultValue={Number(product.price)}
+              className="w-full px-3 py-2 border rounded"
+            />
+
+            <input
+              name="quantity"
+              type="number"
+              defaultValue={product.quantity}
+              className="w-full px-3 py-2 border rounded"
+            />
+
+            <input
+              name="lowStockAt"
+              type="number"
+              defaultValue={product.lowStockAt ?? ""}
+              className="w-full px-3 py-2 border rounded"
+            />
+
+            <div className="flex justify-end gap-2">
+              <button className="px-4 py-2 bg-purple-600 text-white rounded">
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </details>
+      <form
+        action={async (formData: FormData) => {
+          "use server";
+          await deleteProduct(formData);
+        }}
+      >
+        <input type="hidden" name="id" value={product.id} />
+        <button className="text-red-600 hover:text-red-900">
+          Delete
+        </button>
+      </form>
+    </div>
+  </td>
                   </tr>
                 ))}
               </tbody>

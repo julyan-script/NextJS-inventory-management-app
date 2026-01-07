@@ -180,3 +180,4 @@ This project is open source and available under the [MIT License](LICENSE).
 **Happy Coding!** 🚀
 
 Let me know if you'd like me to generate a version with your actual GitHub repo, YouTube URL, or banner image suggestions!
+# inventory-app
